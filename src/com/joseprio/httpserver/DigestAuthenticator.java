@@ -1,20 +1,22 @@
 package com.joseprio.httpserver;
 
+import com.sun.net.httpserver.Authenticator;
+import com.sun.net.httpserver.Headers;
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpPrincipal;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
-import java.util.*;
-import java.io.UnsupportedEncodingException;
-
-import com.sun.net.httpserver.Authenticator;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.Headers;
-import com.sun.net.httpserver.HttpPrincipal;
+import java.util.Set;
 
 /**
  * DigestAuthenticator provides an implementation of HTTP Digest
  * authentication. It is an abstract class and must be extended
- * to provide an implementation of {@link #checkCredentials(String,String)}
+ * to provide an implementation of {@link #gethAuthToken(java.lang.String) }
  * which is called to verify each incoming request.
  */
 public abstract class DigestAuthenticator extends Authenticator {
