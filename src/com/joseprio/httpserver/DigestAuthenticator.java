@@ -222,7 +222,7 @@ public abstract class DigestAuthenticator extends Authenticator {
 
         header = 
         		"Digest realm=\"" + realm + "\","
-        		+ "qop=auth,"
+        		+ "qop=\"auth\","
         		+ "nonce=\"" + nonce + "\","
         		+ "opaque=\"" + getOpaque(realm, nonce) + "\"";
 
